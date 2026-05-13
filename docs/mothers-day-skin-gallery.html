@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sparkline Rush - Mother's Day Skins</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #070a10;
+        color: #f8fbff;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 20% 0%, rgba(125, 242, 221, 0.16), transparent 34%),
+          radial-gradient(circle at 88% 12%, rgba(255, 79, 135, 0.16), transparent 36%),
+          repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 64px),
+          #070a10;
+      }
+
+      main {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 34px 0;
+      }
+
+      header {
+        margin-bottom: 22px;
+      }
+
+      p {
+        margin: 6px 0 0;
+        color: #a8b3c2;
+        font-weight: 800;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 4rem);
+        line-height: 0.9;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 14px;
+      }
+
+      .card {
+        min-height: 220px;
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 8px;
+        display: grid;
+        justify-items: center;
+        gap: 10px;
+        text-align: center;
+        background:
+          linear-gradient(135deg, rgba(125, 242, 221, 0.1), rgba(255, 79, 135, 0.09)),
+          rgba(255, 255, 255, 0.045);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+      }
+
+      .ball {
+        --core: #7df2dd;
+        --accent: #ffffff;
+        --glow: #7df2dd;
+        position: relative;
+        width: 112px;
+        height: 112px;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.26);
+        background: radial-gradient(circle at 35% 28%, #ffffff 0 10%, var(--core) 32%, var(--accent) 72%, #0f172a 100%);
+        box-shadow: 0 0 34px var(--glow);
+      }
+
+      .ball::after {
+        content: "";
+        position: absolute;
+        left: 24px;
+        right: 24px;
+        top: 28px;
+        height: 12px;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 18px var(--accent);
+      }
+
+      .ball::before {
+        content: "";
+        position: absolute;
+        inset: 16px;
+        border: 3px solid var(--accent);
+        border-radius: 50%;
+        opacity: 0.7;
+      }
+
+      .ring::after { top: 48px; transform: rotate(-12deg); }
+      .split::after { background: linear-gradient(90deg, var(--accent), #ffffff); }
+      .stripe::after { top: 52px; transform: rotate(-18deg); }
+      .flame::before { content: "F"; border: 0; display: grid; place-items: center; font-size: 2rem; font-weight: 950; color: rgba(255, 255, 255, 0.9); }
+      .crown::before { content: "^"; border: 0; display: grid; place-items: center; font-size: 2.4rem; font-weight: 950; color: rgba(255, 255, 255, 0.9); transform: translateY(-4px); }
+      .checker::before { border: 0; background: linear-gradient(45deg, rgba(255, 255, 255, 0.24) 25%, transparent 25% 50%, rgba(255, 255, 255, 0.24) 50% 75%, transparent 75%); background-size: 18px 18px; }
+      .star::before { content: "*"; border: 0; display: grid; place-items: center; font-size: 2.5rem; font-weight: 950; color: rgba(255, 255, 255, 0.9); }
+      .aura::before { box-shadow: 0 0 26px var(--accent); }
+      .orbital::before { inset: 38px -14px; height: 28px; transform: rotate(-18deg); }
+
+      h2 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      small {
+        color: #a8b3c2;
+        font-weight: 850;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Mother's Day Weekend Skins</h1>
+        <p>These 10 limited balls appear in the free event chest on May 9 and May 10, 2026.</p>
+      </header>
+      <section class="grid" aria-label="Mother's Day skins">
+        <article class="card"><div class="ball flame" style="--core:#ff477e;--accent:#ffd166;--glow:#ff6b9c"></div><h2>Rose Rocket</h2><small>Fast floral fire</small></article>
+        <article class="card"><div class="ball crown" style="--core:#111827;--accent:#f9a8d4;--glow:#f472b6"></div><h2>Midnight Bouquet</h2><small>Dark luxe bloom</small></article>
+        <article class="card"><div class="ball split" style="--core:#fff7ed;--accent:#7df2dd;--glow:#fed7aa"></div><h2>Pearl Kiss</h2><small>Soft pearl glow</small></article>
+        <article class="card"><div class="ball ring" style="--core:#f0abfc;--accent:#22d3ee;--glow:#e879f9"></div><h2>Neon Carnation</h2><small>Cute electric pop</small></article>
+        <article class="card"><div class="ball crown" style="--core:#7f1d1d;--accent:#fbbf24;--glow:#fb7185"></div><h2>Velvet Crown</h2><small>Queen energy</small></article>
+        <article class="card"><div class="ball checker" style="--core:#16a34a;--accent:#ec4899;--glow:#86efac"></div><h2>Garden Punk</h2><small>Badass bloom</small></article>
+        <article class="card"><div class="ball star" style="--core:#2563eb;--accent:#fb7185;--glow:#60a5fa"></div><h2>Super Spark</h2><small>Cape-core shine</small></article>
+        <article class="card"><div class="ball aura" style="--core:#fb923c;--accent:#fde68a;--glow:#fdba74"></div><h2>Brunch Glow</h2><small>Sweet peach fizz</small></article>
+        <article class="card"><div class="ball stripe" style="--core:#f8fafc;--accent:#f472b6;--glow:#fbcfe8"></div><h2>Starlit Letter</h2><small>Love note shine</small></article>
+        <article class="card"><div class="ball orbital" style="--core:#312e81;--accent:#facc15;--glow:#a78bfa"></div><h2>Cosmic Mom</h2><small>Galaxy glam</small></article>
+      </section>
+    </main>
+  </body>
+</html>

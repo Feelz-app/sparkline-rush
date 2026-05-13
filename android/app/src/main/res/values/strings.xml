@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Sparkline Rush</string>
+    <string name="title_activity_main">Sparkline Rush</string>
+    <string name="package_name">com.sparklinerush.game</string>
+    <string name="custom_url_scheme">com.sparklinerush.game</string>
+    <string name="admob_app_id">ca-app-pub-8331975963152762~5384375576</string>
+</resources>

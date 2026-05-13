@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Sparkline Rush icon</title>
+  <desc id="desc">A glowing arcade runner mark.</desc>
+  <rect width="512" height="512" rx="96" fill="#080a0f"/>
+  <path d="M72 388C128 316 184 244 256 244s128 72 184 144" fill="none" stroke="#263545" stroke-width="24" stroke-linecap="round"/>
+  <path d="M92 156h328M110 256h292M132 356h248" fill="none" stroke="#1d2a34" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="256" cy="244" r="58" fill="#7df2dd"/>
+  <circle cx="256" cy="244" r="28" fill="#f8fafc"/>
+  <path d="M256 80l42 106h-84L256 80z" fill="#ff4f87"/>
+  <path d="M166 402l90-118 90 118H166z" fill="#ffcf5a"/>
+  <path d="M256 300v106" stroke="#b6ff69" stroke-width="22" stroke-linecap="round"/>
+</svg>

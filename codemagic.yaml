@@ -1,0 +1,35 @@
+workflows:
+  ios-app-store:
+    name: Sparkline Rush iOS App Store
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      node: latest
+      xcode: latest
+      vars:
+        BUNDLE_ID: "com.sparklinerush.game"
+        XCODE_PROJECT: "ios/App/App.xcodeproj"
+        XCODE_SCHEME: "App"
+        IOS_ADMOB_APP_ID: "ca-app-pub-3940256099942544~1458002511"
+        VITE_ADMOB_USE_TEST_ADS: "true"
+    scripts:
+      - name: Install dependencies
+        script: npm ci
+      - name: Build web app and sync iOS
+        script: |
+          npm run build
+          npx cap sync ios
+      - name: Set iOS AdMob app ID
+        script: |
+          /usr/libexec/PlistBuddy -c "Set :GADApplicationIdentifier $IOS_ADMOB_APP_ID" ios/App/App/Info.plist
+      - name: Apply App Store signing
+        script: xcode-project use-profiles
+      - name: Build IPA
+        script: xcode-project build-ipa --project "$XCODE_PROJECT" --scheme "$XCODE_SCHEME"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
