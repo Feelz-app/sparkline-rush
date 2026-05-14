@@ -8,6 +8,9 @@ workflows:
     environment:
       node: latest
       xcode: latest
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.sparklinerush.game
       vars:
         BUNDLE_ID: "com.sparklinerush.game"
         XCODE_PROJECT: "ios/App/App.xcodeproj"
