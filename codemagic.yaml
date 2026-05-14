@@ -27,6 +27,12 @@ workflows:
       - name: Set iOS AdMob app ID
         script: |
           /usr/libexec/PlistBuddy -c "Set :GADApplicationIdentifier $IOS_ADMOB_APP_ID" ios/App/App/Info.plist
+      - name: Set up signing keychain
+        script: keychain initialize
+      - name: Fetch App Store signing files
+        script: app-store-connect fetch-signing-files "$BUNDLE_ID" --type IOS_APP_STORE --create
+      - name: Add signing certificates
+        script: keychain add-certificates
       - name: Apply App Store signing
         script: xcode-project use-profiles
       - name: Build IPA
