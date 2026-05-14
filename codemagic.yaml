@@ -10,9 +10,9 @@ workflows:
       xcode: latest
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.sparklinerush.game
+        bundle_identifier: com.valliemaas.sparklinerush
       vars:
-        BUNDLE_ID: "com.sparklinerush.game"
+        BUNDLE_ID: "com.valliemaas.sparklinerush"
         XCODE_PROJECT: "ios/App/App.xcodeproj"
         XCODE_SCHEME: "App"
         IOS_ADMOB_APP_ID: "ca-app-pub-3940256099942544~1458002511"
