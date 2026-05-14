@@ -641,8 +641,10 @@ export function App() {
 
   const startGame = useCallback(() => {
     if (!hasPlayerName) {
-      setActivePanel("home");
-      return;
+      const fallbackName = normalizeName(playerName) || "PLAYER";
+      savePlayerName(fallbackName);
+      setPlayerName(fallbackName);
+      setHasPlayerName(true);
     }
 
     const currentGame = gameRef.current;
@@ -676,7 +678,7 @@ export function App() {
     gameRef.current = nextGame;
     setSubmittedRun(false);
     publish();
-  }, [finalizeRun, hasPlayerName, mode, publish]);
+  }, [finalizeRun, hasPlayerName, mode, playerName, publish]);
 
   const setPaused = useCallback(
     (paused: boolean) => {
@@ -1593,12 +1595,7 @@ export function App() {
                 type="button"
                 className={activePanel === panel.id ? "main-menu-button main-menu-button--active" : "main-menu-button"}
                 key={panel.id}
-                disabled={panel.id === "play" && !hasPlayerName}
                 onClick={() => {
-                  if (panel.id === "play" && !hasPlayerName) {
-                    setActivePanel("home");
-                    return;
-                  }
                   if (panel.id === "play") {
                     setActivePanel("play");
                     startGame();
@@ -1834,7 +1831,6 @@ export function App() {
                 <button
                   type="button"
                   className="primary-button primary-button--launch"
-                  disabled={!hasPlayerName}
                   onClick={() => {
                     setActivePanel("play");
                     startGame();
