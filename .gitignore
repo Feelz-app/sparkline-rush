@@ -41,6 +41,7 @@ android/capacitor-cordova-android-plugins/build/
 android/app/release/
 *.aab
 *.apk
+codemagic_certificate_private_key*
 
 # Unity generated/cache files
 CanyonConspiracyRoyale_Unity/Library/
